@@ -210,9 +210,9 @@
                 let commentBody = fields.comment_body;
                 let username = data.username;
                 let user_img = data.user_img
-                var html = '<div class="userCommentsContainer" style="width: 100%;">' +
+                var html = '<div class="userCommentsContainer" style="width: 100%;text-align: left;">' +
                     '<div class="userComment">' +
-                    '<img class="commentImg" src="{% static ' / image / '%}' + user_img + '">' +
+                    '<img class="commentImg" src="{% static '/image/'%}'+user_img+'">' +
                     '<p class="usernameComment" style="font-weight:bold ">' + username + '</p>' +
                     '<div class="commentControllers">' +
                     '<a href="" class="btn btn-danger commentEdit" >Report</a>' +
