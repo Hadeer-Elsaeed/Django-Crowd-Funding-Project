@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
+                                            data-dismiss="modal" id="CloseReportModal">Close</button>
                                         <input class="btn btn-primary" type="submit" id="projectReport"
                                             value="Send Report" name="project_report">
                                     </div>
@@ -147,7 +147,7 @@
                             <textarea name="reportComment" class="form-control" id="report_comment"></textarea>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeReportComment">Close</button>
                             <a class="btn btn-primary" id="commentReport">Send Report</a>
                             <!-- <input class="btn btn-primary" type="submit" id="commentReport" value="Send Report" name="comment_report"> -->
                         </div>
@@ -249,6 +249,7 @@
                 $("#CommentModalBody").append(html);
                 setTimeout(function () {
                     $('#reportCommentModal').modal('hide');
+                    $("#closeReportComment").trigger('click');
                 }, 1300);
             }
         })
@@ -266,6 +267,7 @@
                 csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
             },
             success: function (data) {
+                console.log(data);
                 $("#report_text").val("");
                 var html = '<p style="color: #009E74;font-weight: bold;">' +
                     'Thank You For Your Report We Will Review It Soon' +
@@ -273,6 +275,7 @@
                 $(".modal-body").append(html);
                 setTimeout(function () {
                     $('#exampleModal').modal('hide');
+                    $("#CloseReportModal").trigger('click');
                 }, 1300);
             }
         })
