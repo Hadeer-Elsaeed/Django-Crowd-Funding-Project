@@ -21,12 +21,14 @@ from project import views as project_views
 from comments import views as comment_views
 import authentication.urls as auth
 from django.conf.urls import url
+import authentication.views as auth_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login_register/',include(auth)),
     path('profiles/', include('profiles.urls')),
     url('^api/v1/', include('social_django.urls', namespace='social')),
+    path('activate/<slug:uid>/<slug:token>/', auth_view.activate, name='activate'),
     path('addproject',project_views.addproject),
     path('project/<int:id>',project_views.listProject),
     path('project',project_views.project),
