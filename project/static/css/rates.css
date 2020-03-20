@@ -2,10 +2,9 @@
   box-sizing: border-box;
 }
 
-body {
+.ratesDiv {
   font-family: Arial;
   margin: 0 auto; /* Center website */
-  max-width: 800px; /* Max width */
   padding: 20px;
 }
 
@@ -50,7 +49,7 @@ body {
 /* The bar container */
 .bar-container {
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: white;
   text-align: center;
   color: white;
 }
