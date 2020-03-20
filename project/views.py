@@ -122,7 +122,6 @@ def donate_project(request,title):
     else:
         return HttpResponse("404 Not Found Kid!!")
 
-
 # Payment View
 def payment_process(request):
     if request.method == 'POST':
